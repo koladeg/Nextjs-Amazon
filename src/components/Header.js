@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import { SearchIcon, MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 
 function Header(props) {
     return (
@@ -25,24 +25,38 @@ function Header(props) {
                 </div>
 
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                    <div>
+                    <div className="link">
                         <p>I need a durag</p>
-                        <p>Account & Lists</p>
+                        <p className="font-extrabold md:text-sm">Account & Lists</p>
                     </div>
 
-                    <div>
+                    <div className="link">
                         <p>Returns</p>
-                        <p>& orders</p>
+                        <p className="font-extrabold md:text-sm">& orders</p>
                     </div>
-                    <div>
+                    <div className="relative link flex items-center">
+                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
+                            0
+                        </span>
                         <ShoppingCartIcon className="h-10" />
-                        <p>Basket</p>
+                        <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
                     </div>
                 </div>
-
             </div>
-            <div>
 
+            <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+                <p className="link flex items-center">
+                    <Bars3Icon className="h-4 mr-1" />
+                    All
+                </p>
+                <p className="link">Prime Video</p>
+                <p className="link">Amazon business</p>
+                <p className="link">Today's Deals</p>
+                <p className="link hidden lg:inline-flex">Electronics</p>
+                <p className="link hidden lg:inline-flex">Food & Grocery</p>
+                <p className="link hidden lg:inline-flex">Prime</p>
+                <p className="link hidden lg:inline-flex">Buy Again</p>
+                <p className="link hidden lg:inline-flex">Shipper Toolkit</p>
             </div>
         </header>
     );
