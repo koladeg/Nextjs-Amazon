@@ -8,7 +8,7 @@ export default function Home() {
         <title>Amazon 2.0</title>
       </Head>
 
-      <h1>Hey peeps</h1>
+      {/*<h1>Hey peeps</h1>*/}
     {/*  Header  */}
     <Header />
     </div>
