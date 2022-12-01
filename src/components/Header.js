@@ -2,15 +2,18 @@ import React from 'react';
 import Image from "next/image";
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { useSession, signIn, signOut } from "next-auth/react"
+import {useRouter} from "next/router";
 
 function Header(props) {
     const { data: session } = useSession()
+    const router = useRouter();
 
     return (
         <header>
             <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
                 <div className="flex items-center mt-2 flex-grow sm:flex-grow-0">
                     <Image
+                        onClick={() => router.push('/')}
                         src="https://links.papareact.com/f90"
                         width={150}
                         height={40}
@@ -39,7 +42,7 @@ function Header(props) {
                         <p>Returns</p>
                         <p className="font-extrabold md:text-sm">& orders</p>
                     </div>
-                    <div className="relative link flex items-center">
+                    <div onClick={() => router.push('/checkout')} className="relative link flex items-center">
                         <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
                             0
                         </span>
